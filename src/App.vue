@@ -1,21 +1,22 @@
 <script setup>
-  import { RouterLink, RouterView } from 'vue-router'
+import { RouterView } from 'vue-router'
+import LeftBar from './components/LeftBar/LeftBar.vue';
 </script>
 
 <template>
-  <header>
-
-    <div class="wrapper">
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
+  <div class="app">
+    <div class="flex">
+      <LeftBar />
+      <div>
+        <RouterView />
+      </div>
     </div>
-  </header>
-
-  <RouterView />
+  </div>
 </template>
 
 <style scoped>
-
+.app {
+  width: 100vw;
+  min-height: 100vh;
+}
 </style>
