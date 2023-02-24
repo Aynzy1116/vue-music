@@ -82,7 +82,7 @@ export function setStorage (key, value, expire = 24) {
 
 // 获取指定storage
 export function getStorage (key) {
-  if (!localStorage.getItem(key) || JSON.stringify(localStorage.getItem(key)) === 'null') {
+  if (JSON.stringify(localStorage.getItem(key)) === 'null') {
     return null
   }
   // 优化 持续使用中续期
